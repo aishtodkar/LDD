@@ -1,6 +1,7 @@
 
-//#include<stdio.h>
+
 #include<linux/module.h>
+
 MODULE_LICENSE("GPL");
 MODULE_LICENSE("GPL v2");
 MODULE_LICENSE("Dual BSD/GPL");
@@ -8,8 +9,7 @@ MODULE_LICENSE("Dual BSD/GPL");
 MODULE_AUTHOR("Aish");
 MODULE_DESCRIPTION("A sample code");
 MODULE_VERSION("1:0.0");
-//static defines function scope within this file
-static int __init hello_world_init(void)	//return type is int	//function body// hello_world
+static int __init hello_world_init(void)
 {
 	//printk("hello world started ");			//KERN_INFO is for getting kernel msg
 	printk(KERN_INFO"hello world started ");		// for printing on console
@@ -17,17 +17,17 @@ static int __init hello_world_init(void)	//return type is int	//function body// 
 }
 
 
-module_init(hello_world_init);		//main()//start execution from this
+module_init(hello_world_init);		//start execution from this
 //module_exit()		//for exit from function
 
 
-static void __exit hello_world_exit(void)		//termination function body// hello_world
+static void __exit hello_world_exit(void)		
 {
 	//printk("hello world exit ");
 	printk(KERN_INFO"hello world exit ");		// for printing on console
 }
 
-module_exit(hello_world_exit);		//exit of module function//compulsory//automatically cannot call exit// absence of this will crash the system
+module_exit(hello_world_exit);		//exit of module function
 
 
 
