@@ -93,7 +93,7 @@ static __exit void  char_dev_exit(void)
 module_init(char_dev_init);
 module_exit(char_dev_exit);
 
-MODULE_AUTHOR("Johny");
+MODULE_AUTHOR("Aish");
 MODULE_DESCRIPTION("Character Device Driver - Test");
 MODULE_LICENSE("GPL");
 
