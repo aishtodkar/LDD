@@ -94,7 +94,7 @@ module_init(char_dev_init);
 module_exit(char_dev_exit);
 
 MODULE_AUTHOR("Aish");
-MODULE_DESCRIPTION("Character Device Driver - Test");
+MODULE_DESCRIPTION("Character Device Driver-Dynamic");
 MODULE_LICENSE("GPL");
 
 
