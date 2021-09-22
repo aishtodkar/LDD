@@ -27,7 +27,7 @@ int main()
 //	fd = open( "", O_RDWR);				// no file
 //	fd = open( "/dev/my_Ioctl_driver", O_RDONLY);		// readonly operation
 //	fd=-1020;						// invalid fd
-//	fd= open("bin_file",O_RDWR);				// binary file
+//	fd= open("bin_file",O_RDWR | O_CREAT);				// binary file
 	if( fd < 0 ) 
 	{
 		printf("\n\nDevice could not be opened\n\n");
@@ -43,7 +43,7 @@ int main()
 	scanf("%d",&number);
 	printf("Writing Value to Driver\n");
 	new_err=ioctl(fd, WR_VALUE, (int32_t*) &number); 
-//	new_err= write(fd,WR_VALUE, (int32_t*)&number);	//included for writing in binary file
+//	new_err= write(fd, (int32_t*)&number, WR_VALUE);	//included for writing in binary file
 	if(new_err<0)
 		perror("WR FAIL:");
 		
@@ -179,22 +179,16 @@ CLOSE FAIL:: Bad file descriptor
 /*************Reading from binary file **********/
 /*
 aishwarya@aishwarya-VirtualBox:~/Documents/LDD/Ioctl/error$ ./a.out
-[11667] - Opening device my_cdrv
-
-
-Device could not be opened
-
-FD FAIL:: No such file or directory
-Device opened with ID [-1]
+[2341] - Opening device my_cdrv
+Device opened with ID [3]
 Enter the Value to send
 2
 Writing Value to Driver
-WR FAIL:: Bad file descriptor
 Reading Value from Driver
-RD FAIL:: Bad file descriptor
-Value is 580800896
+RD FAIL:: Inappropriate ioctl for device
+Value is 539500928
 Closing Driver
-CLOSE FAIL:: Bad file descriptor
+
 
 
 */
