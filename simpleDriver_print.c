@@ -61,7 +61,6 @@ static int __init my_simpledriver_init(void)
 	{
 		printk(KERN_INFO" create the thread");
 		printk("Thread 1 state:%ld",char_thread->state);
-		//printk("%d",char_thread->pid.level);
 		printk(KERN_INFO"thread 1 Flags:%ld",char_thread->thread_info.flags);
 	}
 	else 
