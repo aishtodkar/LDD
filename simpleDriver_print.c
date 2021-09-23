@@ -9,8 +9,6 @@
 //#include <linux/sched.h>               //task_struct
 #include <linux/mutex.h>  
 
-//#define CONFIG_THREAD_INFO_IN_TASK
-
 MODULE_LICENSE("GPL");
 
 static atomic_t	rds_ib_allocation = ATOMIC_INIT(0);
