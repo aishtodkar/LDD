@@ -12,8 +12,7 @@ static struct task_struct *char_thread1;
 static struct task_struct *char_thread2;  
  
  spinlock_t spinlock_var;
- //spin_lock_init(&spinlock_var);
- 
+
  int val_1=30,val_2=20;
                       
 int thread_1(void *p)
@@ -83,7 +82,7 @@ static int __init basic_spin_init(void)	//return type is int	//function body// h
 	{
 		printk(KERN_INFO"unable to create thread2 ");
 	}
-	
+	spin_lock_init(&spinlock_var);
 	return 0;
 }
 		
