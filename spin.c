@@ -61,7 +61,7 @@ int thread_2(void *p)
 
 static int __init basic_spin_init(void)	//return type is int	//function body// hello_world
 {
-	printk(KERN_INFO"basic thread init func ");		// for printing on console
+	printk(KERN_INFO"basic spin init func ");		// for printing on console
 	
 	char_thread1=kthread_run(thread_1,NULL,"my char thread");
 	if(char_thread1)
