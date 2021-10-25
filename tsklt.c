@@ -1,5 +1,4 @@
-//This code is not working on my system(version 5.11.0-38 generic)
-//getting an error that in interrupt.h file having #define DECLARE_TASKLET(name, ._callback) macro. Not having 3 argument maco
+
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/init.h>
